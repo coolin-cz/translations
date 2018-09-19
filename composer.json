@@ -1,0 +1,41 @@
+{
+    "name": "freelo/translations",
+    "license": "MIT",
+    "type": "library",
+    "description": "Library for translating, extracting and translations files generating.",
+    "homepage": "https://github.com/freeloapp/translations",
+    "authors": [
+        {
+            "name": "Freelo.io",
+            "email": "info@freelo.cz"
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "require": {
+        "php": ">= 7.1",
+        "consistence/consistence": "^1.1",
+        "gettext/gettext": "^4.6",
+        "nette/finder": "^2.4",
+        "nette/utils": "^2.5",
+        "psr/log": "^1.0",
+        "symfony/console": "^4.1"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Freelo\\Translations\\": "src"
+        }
+    },
+    "scripts": {
+        "phpstan-install": [
+            "mkdir -p temp/phpstan",
+            "composer require -d temp/phpstan phpstan/phpstan"
+        ],
+        "phpstan": [
+            "temp/phpstan/vendor/bin/phpstan analyse -l max -c phpstan.neon src"
+        ]
+    }
+}
